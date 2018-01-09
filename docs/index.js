@@ -6,6 +6,7 @@ const distributions = [
 {
 	location: "Mexico",
 	base: 1600,
+	baseText: '$1,600.00 Pesos',
 	rate: .052,
 	link: "https://steemit.com/photography/@greenman/2000-followers-ripple-is-not-going-up-because-the-masses-are-moving-in-ripple-is-going-up-because-banks-are-buying-it-update-on"
 }
@@ -84,6 +85,7 @@ $(document).ready(function() {
 		        { "data":"link", "title":"Link"  }
 		    ],
 		    lengthChange: false,
+	        info:     false,
 		    order: [[1, 'desc']]
     	});
     	$('#largest_transactions').DataTable({
@@ -114,6 +116,7 @@ $(document).ready(function() {
 		    lengthChange: false,
 	        info:     false,
 	        pageLength: 5,
+	        searching: false,
 		    order: [[1, 'desc']]
     	});
 
@@ -125,6 +128,7 @@ $(document).ready(function() {
 		    ],
 		    lengthChange: false,
 	        info:     false,
+	        searching: false,
 	        pageLength: 5,
 		    order: [[1, 'desc']]
     	});
@@ -134,7 +138,7 @@ $(document).ready(function() {
 		    columns: [
 		        // { "data":"timestamp", "title":"Timestamp"},
 		        { "data":"location", "title":"Location"  },
-		        { "data":"base", "title":"How Much?"  },
+		        { "data":"baseText", "title":"How Much?"  },
 		        { "data":"rate", "title":"Exchange Rate"},
 		        { "data":"usd", "title":"USD Value",
 		    	  "render": $.fn.dataTable.render.number( ',', '.', 2, '$' )},

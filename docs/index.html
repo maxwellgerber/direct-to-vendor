@@ -27,8 +27,8 @@
 </head>
 
 <script type="text/javascript">
-	const sbd_prices = {'12/04/17': 2.3249999999999997, '12/01/17': 1.405, '12/02/17': 1.985, '12/21/17': 13.575000000000001, '12/26/17': 9.63, '12/09/17': 6.682500000000001, '01/03/18': 10.19, '01/06/18': 7.84, '12/15/17': 10.085, '12/10/17': 7.8475, '12/30/17': 7.975, '12/07/17': 5.125, '12/23/17': 9.4, '12/20/17': 12.6775, '12/25/17': 9.5725, '01/05/18': 8.24, '12/16/17': 10.905, '12/24/17': 10.004999999999999, '12/17/17': 11.2625, '12/12/17': 6.130000000000001, '12/11/17': 7.3325000000000005, '12/31/17': 7.355, '01/02/18': 9.6075, '01/01/18': 8.13, '01/04/18': 9.530000000000001, '12/13/17': 5.5425, '01/08/18': 7.97139, '12/06/17': 2.9924999999999997, '12/03/17': 2.3425000000000002, '12/22/17': 10.65, '12/27/17': 9.125, '01/07/18': 8.3325, '12/18/17': 12.515, '12/28/17': 8.2425, '12/19/17': 13.8075, '12/14/17': 7.8575, '12/08/17': 7.2075, '12/05/17': 2.5949999999999998, '12/29/17': 8.1975};
-	const steem_prices = {'12/04/17': 1.325, '12/01/17': 1.0379692500000002, '12/02/17': 1.1400000000000001, '12/21/17': 3.6425, '12/26/17': 3.445, '12/09/17': 1.7625, '01/03/18': 7.300000000000001, '01/06/18': 6.1375, '12/15/17': 1.97, '12/10/17': 1.6425, '12/30/17': 2.9225000000000003, '12/07/17': 1.69, '12/23/17': 3.1325, '12/20/17': 3.1075, '12/25/17': 3.315, '01/05/18': 6.239999999999999, '12/16/17': 2.08, '12/24/17': 3.3125, '12/17/17': 2.235, '12/12/17': 1.775, '12/11/17': 1.7174999999999998, '12/31/17': 2.8375, '01/02/18': 5.445, '01/01/18': 3.5999999999999996, '01/04/18': 7.339999999999999, '12/13/17': 1.8025, '01/08/18': 5.9719, '12/06/17': 1.3675, '12/03/17': 1.22, '12/22/17': 3.11, '12/27/17': 3.2849999999999997, '01/07/18': 6.6475, '12/18/17': 2.5949999999999998, '12/28/17': 3.0050000000000003, '12/19/17': 2.9475000000000002, '12/14/17': 1.915, '12/08/17': 1.9625000000000004, '12/05/17': 1.4825, '12/29/17': 2.9925};
+	const sbd_prices = {'12/04/17': 2.3249999999999997, '12/01/17': 1.405, '12/02/17': 1.985, '12/21/17': 13.575000000000001, '12/26/17': 9.63, '12/09/17': 6.682500000000001, '01/03/18': 10.19, '01/06/18': 7.84, '12/15/17': 10.085, '12/10/17': 7.8475, '12/30/17': 7.975, '12/07/17': 5.125, '12/23/17': 9.4, '12/20/17': 12.6775, '12/25/17': 9.5725, '01/05/18': 8.24, '12/16/17': 10.905, '12/24/17': 10.004999999999999, '12/17/17': 11.2625, '12/12/17': 6.130000000000001, '12/11/17': 7.3325000000000005, '12/31/17': 7.355, '01/02/18': 9.6075, '01/01/18': 8.13, '01/04/18': 9.530000000000001, '12/13/17': 5.5425, '01/08/18': 8.13719, '12/06/17': 2.9924999999999997, '12/03/17': 2.3425000000000002, '12/22/17': 10.65, '12/27/17': 9.125, '01/07/18': 8.3325, '12/18/17': 12.515, '12/28/17': 8.2425, '12/19/17': 13.8075, '12/14/17': 7.8575, '12/08/17': 7.2075, '12/05/17': 2.5949999999999998, '12/29/17': 8.1975};
+	const steem_prices = {'12/04/17': 1.325, '12/01/17': 1.0379692500000002, '12/02/17': 1.1400000000000001, '12/21/17': 3.6425, '12/26/17': 3.445, '12/09/17': 1.7625, '01/03/18': 7.300000000000001, '01/06/18': 6.1375, '12/15/17': 1.97, '12/10/17': 1.6425, '12/30/17': 2.9225000000000003, '12/07/17': 1.69, '12/23/17': 3.1325, '12/20/17': 3.1075, '12/25/17': 3.315, '01/05/18': 6.239999999999999, '12/16/17': 2.08, '12/24/17': 3.3125, '12/17/17': 2.235, '12/12/17': 1.775, '12/11/17': 1.7174999999999998, '12/31/17': 2.8375, '01/02/18': 5.445, '01/01/18': 3.5999999999999996, '01/04/18': 7.339999999999999, '12/13/17': 1.8025, '01/08/18': 6.0233, '12/06/17': 1.3675, '12/03/17': 1.22, '12/22/17': 3.11, '12/27/17': 3.2849999999999997, '01/07/18': 6.6475, '12/18/17': 2.5949999999999998, '12/28/17': 3.0050000000000003, '12/19/17': 2.9475000000000002, '12/14/17': 1.915, '12/08/17': 1.9625000000000004, '12/05/17': 1.4825, '12/29/17': 2.9925};
 </script>
 
 <body>
@@ -41,14 +41,11 @@
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="https://steemit.com/bitcoin/@greenman/fuck-you-money-my-bitcoin-gains-donations-at-christmas-to-local-thai-vendors-tonight-i-am-broke-ya-ran-out-of-money-giving-it">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="https://steemit.com/@maxg">Contact</a>
           </li>
         </ul>
       </div>
@@ -57,13 +54,12 @@
       <div class="jumbotron">
         <div class="container">
           <h1 class="display-3">Greenman's Direct To Vendor Initiative</h1>
+          <hr class="my-4">
           <p>This is a website dedicatied to show data related to <a href="https://steemit.com/@greenman">@Greenman's</a> "Direct To Vendor" charity initiative. Here, we tally up all of the donations sent to him and compare it to the amount of money he has distributed in his blog posts. Think of it as a public audit of sorts. </p>
           <p>This website was last updated on <strong>Monday, January 8 2018</strong>.</p>
           <hr class="my-4">
           <h3>Total Raised: $<span id="raised">...</span> | Total Distributed $<span id="dist">...</span></h3>
           <p> Special thanks to all of our donors: <span id="donors">...</span></p>
-          <hr class="my-4">
-          <p><a class="btn btn-primary btn-lg" href="https://steemit.com/bitcoin/@greenman/fuck-you-money-my-bitcoin-gains-donations-at-christmas-to-local-thai-vendors-tonight-i-am-broke-ya-ran-out-of-money-giving-it" role="button">Learn more &raquo;</a></p>
         </div>
       </div>
       <div class="">
@@ -74,7 +70,7 @@
 				<h2>All Distributed Donations</h2>
 			</div>
 			<div class="col-12">
-				<table id="distributions" class="table table-striped table-bordered" cellspacing="0"></table>
+				<table id="distributions" class="table table-striped table-bordered" cellspacing="0" width="100%"></table>
 			</div>
 		</div>
 		<div class="row">
@@ -82,7 +78,7 @@
 				<h2>All Incoming Donations</h2>
 			</div>
 			<div class="col-12">
-				<table id="all_transactions" class="table table-striped table-bordered" cellspacing="0"></table>
+				<table id="all_transactions" class="table table-striped table-bordered" cellspacing="0" width="100%"></table>
 			</div>
 		</div>
 		<div class="row">
@@ -90,7 +86,7 @@
 				<h2>Largest Individual Donations</h2>
 			</div>
 			<div class="col-12">
-				<table id="largest_transactions" class="table table-striped table-bordered" cellspacing="0"></table>
+				<table id="largest_transactions" class="table table-striped table-bordered" cellspacing="0" width="100%"></table>
 			</div>
 		</div>
 		<div class="row">
@@ -98,7 +94,7 @@
 				<h2>Largest Total Donors</h2>
 			</div>
 			<div class="col-12">
-				<table id="total_transactions" class="table table-striped table-bordered" cellspacing="0"></table>
+				<table id="total_transactions" class="table table-striped table-bordered" cellspacing="0" width="100%"></table>
 			</div>
 		</div>
 		<div class="row">
@@ -106,7 +102,7 @@
 				<h2>Most Frequent Donors</h2>
 			</div>
 			<div class="col-12">
-				<table id="frequent_transactions" class="table table-striped table-bordered" cellspacing="0"></table>
+				<table id="frequent_transactions" class="table table-striped table-bordered" cellspacing="0" width="100%"></table>
 			</div>
 		</div>
 	</div>
