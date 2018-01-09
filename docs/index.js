@@ -1,5 +1,5 @@
 const low_time_cutoff = new Date("2017-12-24T13:09:45").getTime();
-const hi_time_cutoff = new Date("2018-01-08T13:09:45").getTime();
+const hi_time_cutoff = new Date("2018-01-10").getTime();
 const amnt_cutoff = .1;
 
 const distributions = [
@@ -49,7 +49,7 @@ $(document).ready(function() {
   					type: amount.type,
   					timestamp: moment(d.timestamp).format('MM/DD/YYYY, h:m:s'),
   					usd: amount.val * rate,
-  					link: `<a href="https://steemd.com/tx/${d.trx_id}">${d.trx_id}</a>`
+  					link: `<a href="https://steemd.com/tx/${d.trx_id}">${d.trx_id.substring(0, 6)}...</a>`
   				};
   			})
   		console.log(transfers);
@@ -79,7 +79,8 @@ $(document).ready(function() {
 		        { "data":"timestamp", "title":"Timestamp"},
 		        { "data":"value", "title":"Value"  },
 		        { "data":"type", "title":"STEEM/SBD?"  },
-		        { "data":"usd", "title":"USD Value"},
+		        { "data":"usd", "title":"USD Value",
+		    	  "render": $.fn.dataTable.render.number( ',', '.', 2, '$' )},
 		        { "data":"link", "title":"Link"  }
 		    ],
 		    lengthChange: false,
@@ -92,7 +93,8 @@ $(document).ready(function() {
 		        { "data":"timestamp", "title":"Timestamp"},
 		        { "data":"value", "title":"Value"  },
 		        { "data":"type", "title":"STEEM/SBD?"  },
-		        { "data":"usd", "title":"USD Value"},
+		        { "data":"usd", "title":"USD Value",
+		    	  "render": $.fn.dataTable.render.number( ',', '.', 2, '$' )},
 		        { "data":"link", "title":"Link"  }
 		    ],
 		    lengthChange: false,
@@ -106,7 +108,8 @@ $(document).ready(function() {
     		data: most_donors,
 		    columns: [
 		        { "title":"From" },
-		        { "title":"Total USD Value"}
+		        { "title":"Total USD Value",
+		    	  "render": $.fn.dataTable.render.number( ',', '.', 2, '$' )}
 		    ],
 		    lengthChange: false,
 	        info:     false,
@@ -133,14 +136,24 @@ $(document).ready(function() {
 		        { "data":"location", "title":"Location"  },
 		        { "data":"base", "title":"How Much?"  },
 		        { "data":"rate", "title":"Exchange Rate"},
-		        { "data":"usd", "title":"USD Value"},
+		        { "data":"usd", "title":"USD Value",
+		    	  "render": $.fn.dataTable.render.number( ',', '.', 2, '$' )},
 		        { "data":"link", "title":"Link"  }
 		    ],
 		    lengthChange: false,
 	        info:     false,
 	        searching: false,
+	        pagination: false,
 	        pageLength: 5
     	});
+
+    	tot_dist = distributions.reduce((acc, val)=> {return acc + val.usd}, 0);
+    	tot_acc = transfers.reduce((acc, val)=> {return acc + val.usd}, 0);
+    	donors = Array.from(new Set(transfers.map(d => d.fromLink))).join(', ');
+
+    	$('#raised').text(tot_acc.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+    	$('#dist').text(tot_dist.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}));
+    	$('#donors').html(donors);
   		console.log(transfers);
 	});
 } );
