@@ -1,5 +1,5 @@
 const low_time_cutoff = new Date("2017-12-24T13:09:45").getTime();
-const hi_time_cutoff = new Date("2018-01-10").getTime();
+const hi_time_cutoff = new Date("2018-01-11").getTime();
 const amnt_cutoff = .1;
 
 const distributions = [
@@ -8,6 +8,7 @@ const distributions = [
 	base: 1900,
 	baseText: '$1,900.00 Pesos',
 	rate: .052,
+	rateText: ".052 Peso/USD",
 	link: "https://steemit.com/photography/@greenman/2000-followers-ripple-is-not-going-up-because-the-masses-are-moving-in-ripple-is-going-up-because-banks-are-buying-it-update-on"
 }
 ].map(d=> {
@@ -42,12 +43,15 @@ $(document).ready(function() {
   				var time_ord = moment(d.timestamp).format('MM/DD/YY');
   				var rate = amount.type == "SBD" ? sbd_prices[time_ord] : steem_prices[time_ord];
 
+  				var disp = $.fn.dataTable.render.number( ',', '.', 2, '$' ).display;
+
   				console.log(time_ord, rate);
   				return {
   					from:d.op[1].from, 
   					fromLink: `<a href="https://steemit.com/@${d.op[1].from}">@${d.op[1].from}</a>`,
   					value: amount.val,
   					type: amount.type,
+  					valText: disp(amount.val) + ' ' + amount.type,
   					timestamp: moment(d.timestamp).format('MM/DD/YYYY, h:m:s'),
   					usd: amount.val * rate,
   					link: `<a href="https://steemd.com/tx/${d.trx_id}">${d.trx_id.substring(0, 6)}...</a>`
@@ -78,9 +82,9 @@ $(document).ready(function() {
 		    columns: [
 		        { "data":"fromLink", "title":"From" },
 		        { "data":"timestamp", "title":"Timestamp"},
-		        { "data":"value", "title":"Value"  },
-		        { "data":"type", "title":"STEEM/SBD?"  },
-		        { "data":"usd", "title":"USD Value",
+		        { "data":"valText", "title":"Amount"  },
+		        // { "data":"type", "title":"STEEM/SBD?"  },
+		        { "data":"usd", "title":"USD Value<sup>*</sup>",
 		    	  "render": $.fn.dataTable.render.number( ',', '.', 2, '$' )},
 		        { "data":"link", "title":"Link"  }
 		    ],
@@ -93,9 +97,9 @@ $(document).ready(function() {
 		    columns: [
 		        { "data":"fromLink", "title":"From" },
 		        { "data":"timestamp", "title":"Timestamp"},
-		        { "data":"value", "title":"Value"  },
-		        { "data":"type", "title":"STEEM/SBD?"  },
-		        { "data":"usd", "title":"USD Value",
+		        { "data":"valText", "title":"Amount"  },
+		        // { "data":"type", "title":"STEEM/SBD?"  },
+		        { "data":"usd", "title":"USD Value<sup>*</sup>",
 		    	  "render": $.fn.dataTable.render.number( ',', '.', 2, '$' )},
 		        { "data":"link", "title":"Link"  }
 		    ],
@@ -103,15 +107,15 @@ $(document).ready(function() {
 	        info:     false,
 	        searching: false,
 	        pageLength: 5,
-		    order: [[4, 'desc']]
+		    order: [[3, 'desc']]
     	});
 
     	$('#total_transactions').DataTable({
     		data: most_donors,
 		    columns: [
 		        { "title":"From" },
-		        { "title":"Total USD Value",
-		    	  "render": $.fn.dataTable.render.number( ',', '.', 2, '$' )}
+		        { "title":"Total USD Value<sup>*</sup>",
+		    	  "render": $.fn.dataTable.render.number( ',', '.', 1, '' )}
 		    ],
 		    lengthChange: false,
 	        info:     false,
@@ -139,7 +143,7 @@ $(document).ready(function() {
 		        // { "data":"timestamp", "title":"Timestamp"},
 		        { "data":"location", "title":"Location"  },
 		        { "data":"baseText", "title":"How Much?"  },
-		        { "data":"rate", "title":"Exchange Rate"},
+		        { "data":"rateText", "title":"Exchange Rate<sup>*</sup>"},
 		        { "data":"usd", "title":"USD Value",
 		    	  "render": $.fn.dataTable.render.number( ',', '.', 2, '$' )},
 		        { "data":"link", "title":"Link"  }
