@@ -29,6 +29,8 @@ $(document).ready(function() {
 	$.fn.dataTable.moment( 'MM/DD/YYYY, h:m:s' );
     steem.api.setOptions({ url: 'https://api.steemit.com' });
 	steem.api.getAccountHistory('greenman', 1000000000000000, 10000, function(err, result) {
+		$("#table-holder").show();
+		$("#loader-holder").hide();
 		console.log('AAAA')
   		var transfers = Array.from(result)
   			.map(d => {return d[1]})

@@ -53,19 +53,23 @@
 
       <div class="jumbotron">
         <div class="container">
-          <h1 class="display-3">Greenman's Direct To Vendor Initiative</h1>
+          <h1 class="display-5">Greenman's Direct To Vendor Initiative</h1>
           <hr class="my-4">
           <p>This is a website dedicatied to show data related to <a href="https://steemit.com/@greenman">@Greenman's</a> "Direct To Vendor" charity initiative. Here, we tally up all of the donations sent to him and compare it to the amount of money he has distributed in his blog posts. Think of it as a public audit of sorts. </p>
-          <p>This website was last updated on <strong>Monday, January 8 2018</strong>.</p>
+          <p>This website was last updated on <strong>Thursday, January 11 2018</strong>.</p>
+		  <p> * All USD values/exchange rates calculated at time of donation. See <a href="" target="_blank"> here </a> for more details. </p>
           <hr class="my-4">
           <h3>Total Raised: $<span id="raised">...</span> | Total Distributed $<span id="dist">...</span></h3>
           <p> Special thanks to all of our donors: <span id="donors">...</span></p>
-          <hr class="my-4">
-		  <p> * All USD values/exchange rates calculated at time of donation. See <a href="" target="_blank"> here </a> for more details. </p>
         </div>
       </div>
 
-	<div class="container">
+	<div class="text-center" id="loader-holder">
+		<img src="./loader.gif">
+		<h3> Loading transaction history... </h3>
+	</div>
+
+	<div class="container" id="table-holder" style="display: none">
 		<div class="row">
 			<div class="col-12">
 				<h2>All Distributed Donations</h2>

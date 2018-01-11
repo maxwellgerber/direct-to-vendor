@@ -1,5 +1,5 @@
 const low_time_cutoff = new Date("2017-12-24T13:09:45").getTime();
-const hi_time_cutoff = new Date("2018-01-10").getTime();
+const hi_time_cutoff = new Date("2018-01-11").getTime();
 const amnt_cutoff = .1;
 
 const distributions = [
@@ -29,6 +29,8 @@ $(document).ready(function() {
 	$.fn.dataTable.moment( 'MM/DD/YYYY, h:m:s' );
     steem.api.setOptions({ url: 'https://api.steemit.com' });
 	steem.api.getAccountHistory('greenman', 1000000000000000, 10000, function(err, result) {
+		$("#table-holder").show();
+		$("#loader-holder").hide();
 		console.log('AAAA')
   		var transfers = Array.from(result)
   			.map(d => {return d[1]})
@@ -107,7 +109,7 @@ $(document).ready(function() {
 	        info:     false,
 	        searching: false,
 	        pageLength: 5,
-		    order: [[4, 'desc']]
+		    order: [[3, 'desc']]
     	});
 
     	$('#total_transactions').DataTable({

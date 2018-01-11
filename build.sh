@@ -9,3 +9,4 @@ set -o xtrace
 python generate_historic_rates.py > docs/index.html
 cp index.css docs
 cp index.js docs
+cp loader.gif docs
