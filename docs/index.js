@@ -1,8 +1,16 @@
 const low_time_cutoff = new Date("2017-12-24T13:09:45").getTime();
-const hi_time_cutoff = new Date("2018-01-11").getTime();
+const hi_time_cutoff = new Date("2018-01-15").getTime();
 const amnt_cutoff = .1;
 
 const distributions = [
+{
+	location: "Mexico",
+	base: 5000,
+	baseText: '$5,000.00 Pesos',
+	rate: .052,
+	rateText: ".052 Peso/USD",
+	link: "https://steemit.com/travel/@greenman/giving-money-away-in-mexico-direct-to-vendor-usd5-000-pesos-bitcoin-gains-being-shared-as-well"
+},
 {
 	location: "Mexico",
 	base: 1900,
