@@ -1,5 +1,4 @@
 const low_time_cutoff = new Date("2017-12-24T13:09:45").getTime();
-const hi_time_cutoff = new Date("2018-01-15").getTime();
 const amnt_cutoff = .1;
 
 const distributions = [
@@ -44,13 +43,17 @@ $(document).ready(function() {
   			.map(d => {return d[1]})
   			.filter(d=> {return d.op[0] == 'transfer'})
   			.filter(d=> {return new Date(d.timestamp).getTime() >= low_time_cutoff})
-  			.filter(d=> {return new Date(d.timestamp).getTime() < hi_time_cutoff})
   			// .map(d => {return d[1]})
   			.filter(d => {return d.op[1].to == 'greenman'})
   			.filter(d => {return parseTxAmount(d.op[1].amount).val > amnt_cutoff})
   			.map(d=>{
   				var amount = parseTxAmount(d.op[1].amount);
-  				var time_ord = moment(d.timestamp).format('MM/DD/YY');
+  				var time_obj = moment(d.timestamp)
+  				var time_ord = time_obj.format('MM/DD/YY');
+  				while (sbd_prices[time_ord] === undefined) {
+  					time_obj = time_obj.subtract(1, "days");
+  					time_ord = time_obj.format('MM/DD/YY');
+  				};
   				var rate = amount.type == "SBD" ? sbd_prices[time_ord] : steem_prices[time_ord];
 
   				var disp = $.fn.dataTable.render.number( ',', '.', 2, '$' ).display;
