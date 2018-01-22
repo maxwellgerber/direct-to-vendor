@@ -1,4 +1,5 @@
 const low_time_cutoff = new Date("2017-12-24T13:09:45").getTime();
+const btc_low_time_cutoff = new Date("2018-01-21T13:09:45").getTime();
 const amnt_cutoff = .1;
 
 const distributions = [
@@ -73,6 +74,7 @@ $(document).ready(function() {
 
 	// {'id': '7d5b5bf7d501a1a97d89c39038edf31050efc161c637bc9e47a9d885ca9c1c1d', 'value': '0.14867928', 'date': '01/08/18', 'timestamp': '...'}
 	var btc_transfers = Array.from(raw_btc_tx_data)
+		.filter(d=> {return new Date(d.timestamp).getTime() >= btc_low_time_cutoff})
 		.map(d=>{
 			var amount = parseFloat(d.value);
 			var rate = btc_prices[d.date];
