@@ -4,6 +4,14 @@ const amnt_cutoff = .1;
 const distributions = [
 {
 	location: "Mexico",
+	base: 4000,
+	baseText: '$4,000.00 Pesos',
+	rate: .054,
+	rateText: ".054 Peso/USD",
+	link: "https://steemit.com/bitcoin/@greenman/more-stunning-pictures-from-my-travels-and-i-ran-out-of-money-again-giving-4-000-peso-it-away-direct-to-vendors-and-why-bitcoin"
+},
+{
+	location: "Mexico",
 	base: 5000,
 	baseText: '$5,000.00 Pesos',
 	rate: .052,
@@ -131,6 +139,7 @@ $(document).ready(function() {
 	$('#largest_transactions').DataTable({
 		data: transfers,
 	    columns: [
+	        { "data":"fromLink", "title":"From" },
 	        { "data":"timestamp", "title":"Timestamp"},
 	        { "data":"value", "title":"Amount"  },
 	        { "data":"usd", "title":"USD Value<sup>*</sup>",
