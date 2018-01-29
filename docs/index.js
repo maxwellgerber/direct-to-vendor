@@ -5,6 +5,14 @@ const amnt_cutoff = .1;
 const distributions = [
 {
 	location: "Mexico",
+	base: 6020,
+	baseText: '$6,020.00 Pesos',
+	rate: .054,
+	rateText: ".054 Peso/USD",
+	link: "https://steemit.com/bitcoin/@greenman/a-couple-must-watch-short-bitcoin-videos-for-those-wondering-why-it-is-not-going-away-yet-heading-to-guadalajara-mexico-today-to"
+},
+{
+	location: "Mexico",
 	base: 4000,
 	baseText: '$4,000.00 Pesos',
 	rate: .054,
