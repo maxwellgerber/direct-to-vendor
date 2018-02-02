@@ -5,6 +5,14 @@ const amnt_cutoff = .1;
 const distributions = [
 {
 	location: "Mexico",
+	base: 5000,
+	baseText: '$5,000.00 Pesos',
+	rate: .054,
+	rateText: ".054 Peso/USD",
+	link: "https://steemit.com/steemit/@greenman/giving-your-steem-money-away-in-quadalajara-mexico-direct-to-vendor-update-100-transparent-using-steemit"
+},
+{
+	location: "Mexico",
 	base: 6020,
 	baseText: '$6,020.00 Pesos',
 	rate: .054,
