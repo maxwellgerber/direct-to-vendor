@@ -5,6 +5,14 @@ const amnt_cutoff = .1;
 const distributions = [
 {
 	location: "Mexico",
+	base: 3000,
+	baseText: '$3,000.00 Pesos',
+	rate: .054,
+	rateText: ".054 Peso/USD",
+	link: "https://steemit.com/life/@greenman/monkeys-with-car-keys-as-a-good-fiend-of-mine-always-says-charity-bitcoin-travel-photography-and-steemit"
+},
+{
+	location: "Mexico",
 	base: 5000,
 	baseText: '$5,000.00 Pesos',
 	rate: .054,
