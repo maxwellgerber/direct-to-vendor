@@ -4,6 +4,14 @@ const amnt_cutoff = .1;
 
 const distributions = [
 {
+	location: "Costa Rica",
+	base: 1000,
+	baseText: '$1,000.00 Pesos',
+	rate: .054,
+	rateText: ".054 Peso/USD",
+	link: "https://steemit.com/bitcoin/@greenman/mexico-wow-beautiful-but-not-welcome-if-mature-white-male-justified-though-with-white-dominated-corporate-capture-leaving-third"
+},
+{
 	location: "Mexico",
 	base: 3000,
 	baseText: '$3,000.00 Pesos',
